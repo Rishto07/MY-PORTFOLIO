@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+:root {
+  --color-canvas: #080808;
+  --color-surface-subtle: #121214;
+  --color-surface-elevated: #1a1a1f;
+  --color-border-hairline: rgba(255, 255, 255, 0.08);
+  --color-accent: #FF4B26;
+  --color-accent-hover: #ff6544;
+  --color-text-primary: #F4F2EC;
+  --color-text-muted: #8E8B82;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display-sc: 'Playfair Display SC', Georgia, serif;
+  --font-interface: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Open Sans', 'Source Sans Pro', sans-serif;
+  --font-technical: 'Roboto', monospace;
+  --font-editorial: 'Bree Serif', serif;
+  --font-annotation: 'Caveat', cursive;
+  --font-monoton: 'Monoton', cursive;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-interface);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-display-sc {
+  font-family: var(--font-display-sc);
+}
+
+.font-interface {
+  font-family: var(--font-interface);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-tech {
+  font-family: var(--font-technical);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-hand {
+  font-family: var(--font-annotation);
+}
+
+.font-monoton {
+  font-family: var(--font-monoton);
+}
+
+/* Subtle architectural grid background */
+.bg-grid-subtle {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26262a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4B26;
+}
+
+/* Focus styling */
+:focus-visible {
+  outline: 2px solid #FF4B26;
+  outline-offset: 3px;
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
